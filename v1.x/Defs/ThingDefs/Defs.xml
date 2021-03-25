@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ReligionsOfRimworld.ReligionDef>
+		<defName>ZzZombo_CircleOfSteel</defName>
+		<label>Circle of Steel</label>
+		<description>Formed by hardliners in the Brotherhood of Steel, who believed the rest of the organization has drifted from the original principles of preserving tech. The Circle of Steel, in terms of their position relative to the Brotherhood proper, are the Internal Affairs of the whole Brotherhood of Steel and the leading cause behind the worship of Roger Maxon and his beliefs.</description>
+		<settingsDefs>
+			<li>RoR_NeedPietySettings</li>
+			<li>RoR_TalksSettings</li>
+			<li>RoR_IncidentsSettings</li>
+			<li>RoR_MentalBreaksSettings</li>
+			<li>ZzZCOS_JoiningCriteria1</li>
+			<li>ZzZCOS_AllowedBuildingsSettings</li>
+			<li>ZzZCOS_WorshipSettings</li>
+			<li>ZzZCOS_PrayingSettings</li>
+			<li>ZzZCOS_ApparelSettings</li>
+		</settingsDefs>
+	</ReligionsOfRimworld.ReligionDef>
+	<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRJoiningCriteriaBase">
+		<defName>ZzZCOS_JoiningCriteria1</defName>
+		<settings Class="ReligionsOfRimworld.ReligionSettings_JoiningCriteria">
+			<criteria>
+				<li Class="ReligionsOfRimworld.JoiningCriteria_Race">
+					<criteria>
+						<li>Human</li>
+					</criteria>
+					<importance>Important</importance>
+				</li>
+				<li Class="ReligionsOfRimworld.JoiningCriteria_Trait">
+					<criteria>TooSmart</criteria>
+					<importance>Regular</importance>
+				</li>
+			</criteria>
+		</settings>
+	</ReligionsOfRimworld.ReligionSettingsDef>
+	<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRAllowedBuildingsSettingsBase">
+		<defName>ZzZCOS_AllowedBuildingsSettings</defName>
+		<settings Class="ReligionsOfRimworld.ReligionSettings_AllowedBuildings">
+			<allowedBuildings>
+				<li>ZzZCOS_Relic</li>
+				<li>ZzZCOS_Altar</li>
+			</allowedBuildings>
+		</settings>
+	</ReligionsOfRimworld.ReligionSettingsDef>
+	<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRWorshipSettingsBase">
+		<defName>ZzZCOS_WorshipSettings</defName>
+		<settings Class="ReligionsOfRimworld.ReligionSettings_ReligionActivity">
+			<properties>
+				<li Class="ReligionsOfRimworld.ReligionProperty_ActivityTaskDef">
+					<propertyObject>RoR_TaskWorship</propertyObject>
+					<subject>
+						<piety>RoR_PietyWorshipAverage</piety>
+					</subject>
+					<witness>
+						<piety>RoR_PietyWorshipSmall</piety>
+					</witness>
+				</li>
+			</properties>
+		</settings>
+	</ReligionsOfRimworld.ReligionSettingsDef>
+	<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRPrayingSettingsBase">
+		<defName>ZzZCOS_PrayingSettings</defName>
+		<settings Class="ReligionsOfRimworld.ReligionSettings_Prayings">
+			<prayNeed>Pray</prayNeed>
+			<property Class="ReligionsOfRimworld.ReligionProperty_JobDef">
+				<propertyObject>PrayJob</propertyObject>
+				<subject>
+					<piety>RoR_PietyPrayAverage</piety>
+				</subject>
+			</property>
+		</settings>
+	</ReligionsOfRimworld.ReligionSettingsDef>
+	<ThingDef Name="ZzZCOS_AltarBase" ParentName="SculptureBase" Abstract="True">
+		<thingSetMakerTags Inherit="False" />
+		<passability>Impassable</passability>
+		<scatterableOnMapGen>false</scatterableOnMapGen>
+		<graphicData>
+			<graphicClass>Graphic_Random</graphicClass>
+			<texPath>Things/Building/Art/SculptureSmall</texPath>
+		</graphicData>
+		<fillPercent>0.35</fillPercent>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MaxHitPoints>90</MaxHitPoints>
+			<Mass>3</Mass>
+			<Beauty>50</Beauty>
+			<WorkToMake>200</WorkToMake>
+		</statBases>
+		<tradeTags Inherit="False" />
+		<thingClass>ReligionsOfRimworld.Building_ReligiousBuildingMain</thingClass>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<designationCategory>ReligionBuildings</designationCategory>
+		<building>
+			<watchBuildingStandDistanceRange>
+				<min>2</min>
+				<max>8</max>
+			</watchBuildingStandDistanceRange>
+			<watchBuildingStandRectWidth>7</watchBuildingStandRectWidth>
+		</building>
+	</ThingDef>
+	<ThingDef ParentName="ZzZCOS_AltarBase">
+		<defName>ZzZCOS_Relic</defName>
+		<label>shrine of Victoriam</label>
+		<description>The statue appears to be a cast of the founder of the brotherhood High Elder Roger Maxon.</description>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+	</ThingDef>
+	<ThingDef ParentName="ZzZCOS_AltarBase">
+		<defName>ZzZCOS_Altar</defName>
+		<label>Cirlce of Steel terminal</label>
+		<description>A console that details the rules and regulations the Circle of Steel should follow. Mainly used by high ranking officers to train initiates in the teachings of Maxon.</description>
+		<thingClass>ReligionsOfRimworld.Building_ReligiousBuildingFacility</thingClass>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Building/Art/ZzZCOS_Altar</texPath>
+			<drawSize>(0.7,1)</drawSize>
+		</graphicData>
+		<interactionCellIcon>DiningChair</interactionCellIcon>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<tickerType>Rare</tickerType>
+		<inspectorTabs>
+			<li>ReligionsOfRimworld.ITab_ActivityTasks</li>
+		</inspectorTabs>
+		<costList>
+			<Steel>200</Steel>
+			<Component>2</Component>
+			<Plasteel>10</Plasteel>
+		</costList>
+	</ThingDef>
+	<ThingDef ParentName="ApparelNoQualityBase">
+		<defName>Apparel_ZzZCOS_Book</defName>
+		<label>Code of Steel</label>
+		<description>A full code on how the Circle of steel should operate as well as the original founding principles of the Brootherhood of Steel.</description>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/ZzZCOS_Book/Book</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>0.75</drawSize>
+		</graphicData>
+		<tradeability>None</tradeability>
+		<statBases>
+			<Mass>2</Mass>
+			<WorkToMake>200</WorkToMake>
+			<Flammability>0.8</Flammability>
+			<EquipDelay>0.5</EquipDelay>
+		</statBases>
+		<thingSetMakerTags Inherit="False" />
+		<costList>
+			<Cloth>75</Cloth>
+			<Plasteel>25</Plasteel>
+		</costList>
+		<stuffCategories>
+			<li>Leathery</li>
+		</stuffCategories>
+		<costStuffCount>10</costStuffCount>
+		<recipeMaker>
+			<unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Intellectual</workSkill>
+			<effectWorking>Tailor</effectWorking>
+			<soundWorking>Recipe_Tailor</soundWorking>
+			<recipeUsers>
+				<li>HandTailoringBench</li>
+				<li>ElectricTailoringBench</li>
+			</recipeUsers>
+			<useIngredientsForColor>false</useIngredientsForColor>
+		</recipeMaker>
+		<thingCategories>
+			<li>ApparelUtility</li>
+		</thingCategories>
+		<tickerType>Normal</tickerType>
+		<apparel>
+			<scoreOffset>4</scoreOffset>
+			<careIfWornByCorpse>false</careIfWornByCorpse>
+			<careIfDamaged>false</careIfDamaged>
+			<wearPerDay>0</wearPerDay>
+			<bodyPartGroups>
+				<li>Waist</li>
+			</bodyPartGroups>
+			<layers>
+				<li>Belt</li>
+			</layers>
+		</apparel>
+	</ThingDef>
+	<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRApparelSettingsBase">
+		<defName>ZzZCOS_ApparelSettings</defName>
+		<settings Class="ReligionsOfRimworld.ReligionSettings_Social">
+			<properties>
+				<li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
+					<propertyObject>Apparel_ZzZCOS_Book</propertyObject>
+					<subject>
+						<piety>RoR_PietyApparelGood</piety>
+					</subject>
+				</li>
+			</properties>
+		</settings>
+	</ReligionsOfRimworld.ReligionSettingsDef>
+</Defs>

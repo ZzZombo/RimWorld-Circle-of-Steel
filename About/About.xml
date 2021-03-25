@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Religions of Rimworld 2.0: Circle of Steel</name>
+	<author>ZzZombo, Rick Grymes</author>
+	<url></url>
+	<supportedVersions>
+		<li>1.1</li>
+		<li>1.2</li>
+	</supportedVersions>
+	<modDependencies>
+		<li>
+			<packageId>basarab.ror</packageId>
+			<displayName>Religions of Rimworld 2.0</displayName>
+			<downloadUrl>https://github.com/basarab1504/ReligionsOfRimworld-2.0/releases/latest</downloadUrl>
+			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=1974112020</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>basarab.ror</li>
+	</loadAfter>
+	<packageId>ZzZombo.commission.CircleOfSteel</packageId>
+	<description>Adds a new religion for "Religions of Rimworld 2.0".\n\nFormed by hardliners in the Brotherhood of Steel, who believed the rest of the organization has drifted from the original principles of preserving tech. The Circle of Steel, in terms of their position relative to the Brotherhood proper, are the Internal Affairs of the whole Brotherhood of Steel and the leading cause behind the worship of Roger Maxon and his beliefs.</description>
+</ModMetaData>
