@@ -118,9 +118,11 @@
 		</graphicData>
 		<size>(3,2)</size>
 		<uiIconScale>0.90</uiIconScale>
-		<interactionCellIcon>DiningChair</interactionCellIcon>
 		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellIcon>DiningChair</interactionCellIcon>
 		<interactionCellOffset>(0,0,2)</interactionCellOffset>
+		<interactionCellIconReverse>true</interactionCellIconReverse>
+		<defaultPlacingRot>South</defaultPlacingRot>
 		<tickerType>Rare</tickerType>
 		<inspectorTabs>
 			<li>ReligionsOfRimworld.ITab_ActivityTasks</li>
