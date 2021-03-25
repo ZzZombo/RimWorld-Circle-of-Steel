@@ -74,12 +74,7 @@
 		<thingSetMakerTags Inherit="False" />
 		<passability>Impassable</passability>
 		<scatterableOnMapGen>false</scatterableOnMapGen>
-		<graphicData>
-			<graphicClass>Graphic_Random</graphicClass>
-			<texPath>Things/Building/Art/SculptureSmall</texPath>
-		</graphicData>
 		<fillPercent>0.35</fillPercent>
-		<rotatable>false</rotatable>
 		<statBases>
 			<MaxHitPoints>90</MaxHitPoints>
 			<Mass>3</Mass>
@@ -102,6 +97,10 @@
 		<defName>ZzZCOS_Relic</defName>
 		<label>shrine of Victoriam</label>
 		<description>The statue appears to be a cast of the founder of the brotherhood High Elder Roger Maxon.</description>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Building/Art/ZzZCOS_Relic/RogerMaxson</texPath>
+		</graphicData>
 		<costList>
 			<Steel>150</Steel>
 		</costList>
@@ -112,20 +111,22 @@
 		<description>A console that details the rules and regulations the Circle of Steel should follow. Mainly used by high ranking officers to train initiates in the teachings of Maxon.</description>
 		<thingClass>ReligionsOfRimworld.Building_ReligiousBuildingFacility</thingClass>
 		<graphicData>
-			<graphicClass>Graphic_Single</graphicClass>
-			<texPath>Things/Building/Art/ZzZCOS_Altar</texPath>
-			<drawSize>(0.7,1)</drawSize>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<texPath>Things/Building/Art/ZzZCOS_Altar/Console</texPath>
+			<drawSize>(3,2)</drawSize>
 		</graphicData>
+		<size>(3,2)</size>
+		<uiIconScale>0.90</uiIconScale>
 		<interactionCellIcon>DiningChair</interactionCellIcon>
 		<hasInteractionCell>True</hasInteractionCell>
-		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<interactionCellOffset>(0,0,2)</interactionCellOffset>
 		<tickerType>Rare</tickerType>
 		<inspectorTabs>
 			<li>ReligionsOfRimworld.ITab_ActivityTasks</li>
 		</inspectorTabs>
 		<costList>
 			<Steel>200</Steel>
-			<Component>2</Component>
+			<ComponentIndustrial>2</ComponentIndustrial>
 			<Plasteel>10</Plasteel>
 		</costList>
 	</ThingDef>
