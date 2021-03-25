@@ -101,6 +101,7 @@
 			<graphicClass>Graphic_Single</graphicClass>
 			<texPath>Things/Building/Art/ZzZCOS_Relic/RogerMaxson</texPath>
 		</graphicData>
+		<rotatable>false</rotatable>
 		<costList>
 			<Steel>150</Steel>
 		</costList>
